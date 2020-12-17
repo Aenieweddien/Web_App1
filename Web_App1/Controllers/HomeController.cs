@@ -12,7 +12,7 @@ namespace Web_App1.Controllers
         private Models.Shop1Model db = new Models.Shop1Model();
         public ActionResult Index()
         {
-            var Items = db.comics;
+            var Items = db.comics.Take(8);
             return View(Items);
         }
         public ActionResult Thiscomic(int Id_comic)
