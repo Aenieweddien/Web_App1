@@ -35,12 +35,12 @@ namespace Web_App1.Models.ViewModels.Pages
         }
 
         public int Id_comic { get; set; }
-        [Required]
-        [StringLength(50, MinimumLength = 3)]
+       // [Required]
+        //[StringLength(50, MinimumLength = 3)]
         public string Title { get; set; }
-        [Required]
-        [StringLength(int.MaxValue, MinimumLength = 3)]
-        [AllowHtml]
+        //[Required]
+        //[StringLength(int.MaxValue, MinimumLength = 3)]
+        //[AllowHtml]
         public string Publisher { get; set; }
         public string Artist { get; set; }
         public string Author { get; set; }

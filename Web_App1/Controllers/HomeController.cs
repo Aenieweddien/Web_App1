@@ -11,7 +11,7 @@ namespace Web_App1.Controllers
 {
     public class HomeController : Controller
     {
-        public int pageSize = 4;
+        
         // GET: Home
         private Models.Shop1Model db = new Models.Shop1Model();
         public ActionResult Index()

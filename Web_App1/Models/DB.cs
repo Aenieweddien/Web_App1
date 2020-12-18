@@ -10,6 +10,7 @@ namespace Web_App1.Models.Data
     {
         public DbSet<PagesDTO> Pages { get; set; }
 
+        //public DbSet<comics> Comicst { get; set; }
         //public DbSet<SidebarDTO> Sidebars { get; set; }
     }
 }
