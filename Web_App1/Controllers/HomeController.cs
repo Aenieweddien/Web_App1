@@ -1,18 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using Web_App1.Models.Data;
+using Web_App1.Models.ViewModels.Pages;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Linq;
 
 namespace Web_App1.Controllers
 {
     public class HomeController : Controller
     {
+        public int pageSize = 4;
         // GET: Home
         private Models.Shop1Model db = new Models.Shop1Model();
         public ActionResult Index()
         {
-            var Items = db.comics;
+            List<PageVM> Items;
+            using (DB db = new DB())
+            {
+                Items = db.Pages.ToArray().OrderBy(x => x.Id_comic).Select(x => new PageVM(x)).ToList();
+            }
             return View(Items);
         }
         public ActionResult Thiscomic(int Id_comic)
@@ -23,5 +31,6 @@ namespace Web_App1.Controllers
         {
             return View();
         }
+        
     }
 }

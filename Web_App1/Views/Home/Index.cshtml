@@ -1,0 +1,50 @@
+﻿@using Web_App1.Models
+@using Web_App1.Models.Data;
+@using Web_App1.Models.ViewModels.Pages;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        body {
+            background: url(https://images2.alphacoders.com/864/864918.jpg) no-repeat;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+   <!-- foreach (var p in )-->
+{
+<div>
+    <p align="center" class="title">@p.Title</p>
+    <div align="center">
+        <a align="center" class="cost" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic }) style="text-decoration:none; align-content:center;">
+            <img src="@p.Image" width="140px" align="center">
+        </a>
+    </div>
+
+
+
+    <p align="center" class="cost">
+        <font style="text-decoration:line-through; font-size:14px; margin-top:15px" color="red">
+            @p.Old_Price
+        </font>
+        <a class="cost" href="#" style="text-decoration: none; font-size:24px;">
+            @p.New_Price &#8372
+        </a>
+    </p>
+
+</div>
+}
+    <div>
+    </div>
+</body>
+</html>

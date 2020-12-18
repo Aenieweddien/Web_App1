@@ -11,7 +11,8 @@ namespace Web_App1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class comics
     {
         public int Id_comic { get; set; }
