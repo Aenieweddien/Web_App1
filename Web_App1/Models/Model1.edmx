@@ -40,6 +40,7 @@
           <Property Name="New_Price" Type="real" />
           <Property Name="Image" Type="nvarchar" MaxLength="100" />
           <Property Name="Quantity" Type="smallint" />
+          <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -111,6 +112,7 @@
           <Property Name="New_Price" Type="Single" />
           <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Quantity" Type="Int16" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -183,6 +185,7 @@
                 <ScalarProperty Name="New_Price" ColumnName="New_Price" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

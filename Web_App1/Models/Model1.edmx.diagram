@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="81c82cef46294423a0b526fdeff262c6" Name="Diagram1">
-        <EntityTypeShape EntityType="Database1Model.Cart" Width="1.5" PointX="1.125" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.comics" Width="1.5" PointX="3.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Message" Width="1.5" PointX="5.375" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Users" Width="1.5" PointX="7.375" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="311d6e08273b4c08b2204acbbc2fdaae" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model.Cart" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.comics" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Message" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Users" Width="1.5" PointX="7.625" PointY="2.375" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

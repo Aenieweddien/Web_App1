@@ -36,6 +36,7 @@
           <ScalarProperty Name="New_Price" ColumnName="New_Price" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

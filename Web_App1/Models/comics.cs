@@ -11,8 +11,7 @@ namespace Web_App1.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-
+    
     public partial class comics
     {
         public int Id_comic { get; set; }
@@ -30,5 +29,6 @@ namespace Web_App1.Models
         public Nullable<float> New_Price { get; set; }
         public string Image { get; set; }
         public Nullable<short> Quantity { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace Web_App1.Models.Data
         public Nullable<float> New_Price { get; set; }
         public string Image { get; set; }
         public Nullable<short> Quantity { get; set; }
+        public string Description { get; set; }
 
     }
 }

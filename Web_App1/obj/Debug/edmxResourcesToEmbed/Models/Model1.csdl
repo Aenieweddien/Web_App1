@@ -35,6 +35,7 @@
     <Property Name="New_Price" Type="Single" />
     <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Quantity" Type="Int16" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Message">
     <Key>

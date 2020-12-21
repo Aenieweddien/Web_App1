@@ -32,6 +32,7 @@ namespace Web_App1.Models.ViewModels.Pages
             New_Price = row.New_Price;
             Image = row.Image;
             Quantity = row.Quantity;
+            Description = row.Description;
         }
 
         public int Id_comic { get; set; }
@@ -54,6 +55,7 @@ namespace Web_App1.Models.ViewModels.Pages
         public Nullable<float> New_Price { get; set; }
         public string Image { get; set; }
         public Nullable<short> Quantity { get; set; }
+        public string Description { get; set; }
 
     }
 

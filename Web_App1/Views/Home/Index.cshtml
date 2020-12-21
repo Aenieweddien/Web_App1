@@ -12,56 +12,159 @@
 
 <html>
 <head>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Bangers">
+    <!--<link href="~/Content/book.css" rel="stylesheet" type="text/css" />-->
+    <link href="~/Content/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/book2.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/demo.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr.custom.js"></script>
     <style>
+        .align {
+            clear: both;
+            margin: 50px auto 20px;
+            width: 100%;
+            max-width: 1170px;
+            text-align: center;
+        }
+
+        .cost {
+            font-family: Bangers;
+        }
+
+        figcaption {
+            padding-left: 40px;
+            text-align: left;
+            position: absolute;
+            top: 0%;
+            left: 160px;
+            width: 430px;
+            -webkit-backface-visibility: hidden;
+        }
+
+
+        *:before,*:after{
+
+            display:none
+        }
+
         body {
             background: url(https://images2.alphacoders.com/864/864918.jpg) no-repeat;
         }
+
+        .wraper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+            .wraper div {
+                background: #e99340;
+                border: 4px solid #c46c17;
+                text-align: center;
+                @*margin: 20px;
+                *@
+            }
+
+                .wraper div:nth-child(2n) {
+                    background: #a9e940;
+                    border: 4px solid #6ec417;
+                }
     </style>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
 <body>
-
-   
-
-    @foreach (var p in Model)
-    {
-
-        <div>
-            <p align="center" class="title">@p.Title</p>
-            <div align="center">
-                <a align="center" class="cost" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic }) style="text-decoration:none; align-content:center;">
-                    <img src="@p.Image" width="140px">
-                </a>
-            </div>
-
-
-
-
-            <p align="center" class="cost">
-                <font style="text-decoration:line-through; font-size:14px; margin-top:15px" color="red">
-                    @p.Old_Price
-                </font>
-                <a class="cost" href="#" style="text-decoration: none; font-size:24px;">
-                    @p.New_Price &#8372
-                </a>
-            </p>
-
-        </div>
+    @{ 
+        int a = 0;
     }
 
-    <script>
-        const canvas = document.getElementById("drawingCanvas");
-        const context = canvas.getContext("2d");
+    <div class="wraper">
 
-        var img = new Image();
-        img.onload = function () {
-            context.drawImage(img, 10, 10);
-        };
 
-        img.src = "bang.png";
-    </script>
-    <div>
+
+        @foreach (var p in Model)
+        {
+
+            <div class="component">
+
+                <ul class="align">
+                    <li>
+                        <figure class='book'>
+                            
+                                <!-- Front -->
+
+                                <ul class='paperback_front'>
+                                    <li>
+                                        <a class="cost" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic }) style="text-decoration:none; ">
+                                            <img src="@p.Image" width="160px" height="220px">
+                                        </a>
+
+                                    </li>
+                                    <li></li>
+                                </ul>
+
+                                <!-- Pages -->
+
+                                <ul class='ruled_paper'>
+                                    <li></li>
+                                    <li>
+                                        <a class="btn" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic })>View</a>
+                                        <a class="btn" href="#">Buy</a>
+
+                                    </li>
+
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+
+                                <!-- Back -->
+
+                                <ul class='paperback_back'>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+
+                                <figcaption>
+                                    <h1>@p.Title</h1>
+                                    <span>By @p.Author</span>
+                                    <p>На складе: @p.Quantity</p>
+
+                                    <font style="text-decoration:line-through; font-family:Bangers; font-size:24px; margin-top:1vh" color="red">
+                                        @p.Old_Price
+                                    </font>
+                                    <a class="cost" href="#" style="text-decoration: none; font-size:32px;">
+                                        @p.New_Price &#8372
+                                    </a>
+                                </figcaption>
+                         
+                        </figure>
+                    </li>
+
+
+
+
+
+
+
+
+
+                   
+
+                </ul>
+            </div>
+           /* a++;
+            if (a == 4)
+            {
+                @Html.Raw("</tr>")
+                break;
+            }*/
+        }
+         
+
     </div>
+        <div>
+        </div>
 </body>
 </html>
