@@ -31,6 +31,10 @@ namespace Web_App1.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult Home()
+        {
+            return View();
+        }
     }
 }

@@ -22,10 +22,11 @@
 </head>
 <body>
 
+   
 
     @foreach (var p in Model)
     {
-        
+
         <div>
             <p align="center" class="title">@p.Title</p>
             <div align="center">
@@ -33,6 +34,7 @@
                     <img src="@p.Image" width="140px">
                 </a>
             </div>
+
 
 
 
@@ -47,6 +49,18 @@
 
         </div>
     }
+
+    <script>
+        const canvas = document.getElementById("drawingCanvas");
+        const context = canvas.getContext("2d");
+
+        var img = new Image();
+        img.onload = function () {
+            context.drawImage(img, 10, 10);
+        };
+
+        img.src = "bang.png";
+    </script>
     <div>
     </div>
 </body>
