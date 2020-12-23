@@ -4,11 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="311d6e08273b4c08b2204acbbc2fdaae" Name="Diagram1">
-        <EntityTypeShape EntityType="Database1Model.Cart" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.comics" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Message" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Users" Width="1.5" PointX="7.625" PointY="2.375" IsExpanded="true" />
+      <Diagram DiagramId="2f76473561ee453c9b1cdbca0136b2f0" Name="Diagram1">
+        <EntityTypeShape EntityType="Web_App1.Models.Data.DBModel.comics" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_App1.Models.Data.DBModel.tblCategories" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_App1.Models.Data.DBModel.tblPages" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_App1.Models.Data.DBModel.tblRoles" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_App1.Models.Data.DBModel.tblSidebar" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_App1.Models.Data.DBModel.tblUserRoles" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Web_App1.Models.Data.DBModel.tblUsers" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

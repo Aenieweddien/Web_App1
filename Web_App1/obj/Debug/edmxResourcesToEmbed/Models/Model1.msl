@@ -1,25 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Shop1Model">
-    <EntitySetMapping Name="Cart">
-      <EntityTypeMapping TypeName="Database1Model.Cart">
-        <MappingFragment StoreEntitySet="Cart">
-          <ScalarProperty Name="Id_cart" ColumnName="Id_cart" />
-          <ScalarProperty Name="id_comic" ColumnName="id_comic" />
-          <ScalarProperty Name="id_user" ColumnName="id_user" />
-          <ScalarProperty Name="status_cart" ColumnName="status_cart" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="Web_App1ModelsDataDBModelStoreContainer" CdmEntityContainer="DBEntities">
     <EntitySetMapping Name="comics">
-      <EntityTypeMapping TypeName="Database1Model.comics">
+      <EntityTypeMapping TypeName="Web_App1.Models.Data.DBModel.comics">
         <MappingFragment StoreEntitySet="comics">
           <ScalarProperty Name="Id_comic" ColumnName="Id_comic" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -37,32 +20,67 @@
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Message">
-      <EntityTypeMapping TypeName="Database1Model.Message">
-        <MappingFragment StoreEntitySet="Message">
-          <ScalarProperty Name="Id_Message" ColumnName="Id_Message" />
+    <EntitySetMapping Name="tblCategories">
+      <EntityTypeMapping TypeName="Web_App1.Models.Data.DBModel.tblCategories">
+        <MappingFragment StoreEntitySet="tblCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Message1" ColumnName="Message" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+          <ScalarProperty Name="Sorting" ColumnName="Sorting" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="Database1Model.Users">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
-          <ScalarProperty Name="First_name" ColumnName="First_name" />
-          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
+    <EntitySetMapping Name="tblPages">
+      <EntityTypeMapping TypeName="Web_App1.Models.Data.DBModel.tblPages">
+        <MappingFragment StoreEntitySet="tblPages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Sorting" ColumnName="Sorting" />
+          <ScalarProperty Name="HasSidebar" ColumnName="HasSidebar" />
+          <ScalarProperty Name="Slug" ColumnName="Slug" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoles">
+      <EntityTypeMapping TypeName="Web_App1.Models.Data.DBModel.tblRoles">
+        <MappingFragment StoreEntitySet="tblRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSidebar">
+      <EntityTypeMapping TypeName="Web_App1.Models.Data.DBModel.tblSidebar">
+        <MappingFragment StoreEntitySet="tblSidebar">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserRoles">
+      <EntityTypeMapping TypeName="Web_App1.Models.Data.DBModel.tblUserRoles">
+        <MappingFragment StoreEntitySet="tblUserRoles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="Web_App1.Models.Data.DBModel.tblUsers">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailAdress" ColumnName="EmailAdress" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

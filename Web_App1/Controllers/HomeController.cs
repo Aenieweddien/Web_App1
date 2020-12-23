@@ -12,30 +12,56 @@ namespace Web_App1.Controllers
     public class HomeController : Controller
     {
 
-        // GET: Home
-        //public int pageSize = 4;
-        private Models.Shop1Model db = new Models.Shop1Model();
-        public ActionResult Index()
+        // GET: Page
+        public ActionResult Index(string page = "")
         {
-            List<PageVM> Items;
+            //if (page == "")
+            //    page = "home";
+
+            PageVM model;
+            PagesDTO dto;
             using (DB db = new DB())
             {
-                Items = db.Pages.ToArray().OrderBy(x => x.Id_comic).Select(x => new PageVM(x)).ToList();
+                if (!db.Pages.Any(x => x.Slug.Equals(page)))
+                    return RedirectToAction("Index", new { page = "" });
             }
-            return View(Items);
-        }
-        public ActionResult Thiscomic(int Id_comic)
-        {
-            return View(db.comics.Where(p => p.Id_comic == Id_comic).Take(1));
-        }
-        public ActionResult AboutUs()
-        {
-            return View();
-        }
+            using (DB db = new DB())
+            {
+                dto = db.Pages.Where(x => x.Slug == page).FirstOrDefault();
+            }
+            ViewBag.PageTitle = dto.Title;
 
-        public ActionResult Home()
+            if (dto.HasSidebar == true)
+            {
+                ViewBag.Sidebar = "Yes";
+            }
+            else
+            {
+                ViewBag.Sidebar = "No";
+            }
+            model = new PageVM(dto);
+
+
+            return View(model);
+        }
+        public ActionResult PagesMenuPartial()
         {
-            return View();
+            List<PageVM> pageVMList;
+            using (DB db = new DB())
+            {
+                pageVMList = db.Pages.ToArray().OrderBy(x => x.Sorting).Where(x => x.Slug != "home").Select(x => new PageVM(x)).ToList();
+            }
+            return PartialView("_PagesMenuPartial", pageVMList);
+        }
+        public ActionResult SidebarPartial()
+        {
+            SidebarVM model;
+            using (DB db = new DB())
+            {
+                SidebarDTO dto = db.Sidebars.Find(1);// Говнокод
+                model = new SidebarVM(dto);
+            }
+            return PartialView("SidebarPartial", model);
         }
     }
 }

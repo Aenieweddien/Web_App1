@@ -1,70 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Cart">
-    <Key>
-      <PropertyRef Name="Id_cart" />
-    </Key>
-    <Property Name="Id_cart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_comic" Type="int" Nullable="false" />
-    <Property Name="id_user" Type="int" Nullable="false" />
-    <Property Name="status_cart" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="First_Name" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Last_Name" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Patronymic" Type="nvarchar" MaxLength="25" />
-    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Date" Type="smalldatetime" Nullable="false" />
-  </EntityType>
+<Schema Namespace="Web_App1.Models.Data.DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="comics">
     <Key>
       <PropertyRef Name="Id_comic" />
     </Key>
     <Property Name="Id_comic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Publisher" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Artist" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Genre" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="Language" Type="varchar" MaxLength="25" Nullable="false" />
-    <Property Name="Cover" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Publisher" Type="nvarchar(max)" />
+    <Property Name="Artist" Type="nvarchar(max)" />
+    <Property Name="Author" Type="nvarchar(max)" />
+    <Property Name="Genre" Type="nvarchar(max)" />
+    <Property Name="Language" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cover" Type="nvarchar(max)" />
     <Property Name="Pages" Type="smallint" Nullable="false" />
     <Property Name="Year" Type="smallint" Nullable="false" />
-    <Property Name="ISBN" Type="varchar" MaxLength="20" />
+    <Property Name="ISBN" Type="nvarchar(max)" />
     <Property Name="Old_Price" Type="real" />
     <Property Name="New_Price" Type="real" />
-    <Property Name="Image" Type="nvarchar" MaxLength="100" />
+    <Property Name="Image" Type="nvarchar(max)" />
     <Property Name="Quantity" Type="smallint" />
     <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="Slug" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Message">
+  <EntityType Name="tblCategories">
     <Key>
-      <PropertyRef Name="Id_Message" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id_Message" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Phone" Type="varchar" MaxLength="15" />
-    <Property Name="Message" Type="ntext" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Slug" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sorting" Type="int" />
   </EntityType>
-  <EntityType Name="Users">
+  <EntityType Name="tblPages">
     <Key>
-      <PropertyRef Name="Id_User" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="First_name" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Last_name" Type="nvarchar" MaxLength="25" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="Status" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="Phone" Type="varchar" MaxLength="15" Nullable="false" />
-    <Property Name="Avatar" Type="varchar" MaxLength="100" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Body" Type="varchar(max)" />
+    <Property Name="Sorting" Type="int" />
+    <Property Name="HasSidebar" Type="bit" />
+    <Property Name="Slug" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityContainer Name="Database1ModelStoreContainer">
-    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+  <EntityType Name="tblRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblSidebar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="EmailAdress" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Web_App1ModelsDataDBModelStoreContainer">
     <EntitySet Name="comics" EntityType="Self.comics" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCategories" EntityType="Self.tblCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPages" EntityType="Self.tblPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRoles" EntityType="Self.tblRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSidebar" EntityType="Self.tblSidebar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserRoles" EntityType="Self.tblUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

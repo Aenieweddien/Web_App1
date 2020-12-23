@@ -1,8 +1,8 @@
 ﻿@using Web_App1.Models
 @using Web_App1.Models.Data;
-@using Web_App1.Models.ViewModels.Pages;
+@using Web_App1.Models.ViewModels.Shop;
 <!--model IEnumerable<Web_App1.Models.comics> -->
-@model List<Web_App1.Models.ViewModels.Pages.PageVM> 
+@model List<Web_App1.Models.ViewModels.Shop.comicsVM>
 
 @{
     Layout = null;
@@ -75,7 +75,7 @@
     <title>Index</title>
 </head>
 <body>
-    @{ 
+    @{
         int a = 0;
     }
 
@@ -91,54 +91,54 @@
                 <ul class="align">
                     <li>
                         <figure class='book'>
-                            
-                                <!-- Front -->
 
-                                <ul class='paperback_front'>
-                                    <li>
-                                        <a class="cost" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic }) style="text-decoration:none; ">
-                                            <img src="@p.Image" width="160px" height="220px">
-                                        </a>
+                            <!-- Front -->
 
-                                    </li>
-                                    <li></li>
-                                </ul>
-
-                                <!-- Pages -->
-
-                                <ul class='ruled_paper'>
-                                    <li></li>
-                                    <li>
-                                        <a class="btn" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic })>View</a>
-                                        <a class="btn" href="#">Buy</a>
-
-                                    </li>
-
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-
-                                <!-- Back -->
-
-                                <ul class='paperback_back'>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-
-                                <figcaption>
-                                    <h1>@p.Title</h1>
-                                    <span>By @p.Author</span>
-                                    <p>На складе: @p.Quantity</p>
-
-                                    <font style="text-decoration:line-through; font-family:Bangers; font-size:24px; margin-top:1vh" color="red">
-                                        @p.Old_Price
-                                    </font>
-                                    <a class="cost" href="#" style="text-decoration: none; font-size:32px;">
-                                        @p.New_Price &#8372
+                            <ul class='paperback_front'>
+                                <li>
+                                    <a class="cost" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic }) style="text-decoration:none; ">
+                                        <img src="@p.Image" width="160px" height="220px">
                                     </a>
-                                </figcaption>
-                         
+
+                                </li>
+                                <li></li>
+                            </ul>
+
+                            <!-- Pages -->
+
+                            <ul class='ruled_paper'>
+                                <li></li>
+                                <li>
+                                    <a class="btn" href=@Url.Action("ThisComic", "Home", new { id_comic = p.Id_comic })>View</a>
+                                    <a class="btn" href="#">Buy</a>
+
+                                </li>
+
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                            <!-- Back -->
+
+                            <ul class='paperback_back'>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                            <figcaption>
+                                <h1>@p.Title</h1>
+                                <span>By @p.Author</span>
+                                <p>На складе: @p.Quantity</p>
+
+                                <font style="text-decoration:line-through; font-family:Bangers; font-size:24px; margin-top:1vh" color="red">
+                                    @p.Old_Price
+                                </font>
+                                <a class="cost" href="#" style="text-decoration: none; font-size:32px;">
+                                    @p.New_Price &#8372
+                                </a>
+                            </figcaption>
+
                         </figure>
                     </li>
 
@@ -150,21 +150,21 @@
 
 
 
-                   
+
 
                 </ul>
             </div>
-           /* a++;
-            if (a == 4)
-            {
-                @Html.Raw("</tr>")
-                break;
-            }*/
+            /* a++;
+             if (a == 4)
+             {
+                 @Html.Raw("</tr>")
+                 break;
+             }*/
         }
-         
+
 
     </div>
-        <div>
-        </div>
+    <div>
+    </div>
 </body>
 </html>
